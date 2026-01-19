@@ -13,7 +13,7 @@ keywords:
 estimated_reading_time: 5
 ---
 
-HVE-Core provides GitHub Copilot customizations (chat modes, instructions, and prompts) that enhance your development workflow. This guide helps you choose the right installation method for your environment.
+HVE-Core provides GitHub Copilot customizations (custom agents, instructions, and prompts) that enhance your development workflow. This guide helps you choose the right installation method for your environment.
 
 ## Recommended: VS Code Extension ⭐
 
@@ -71,17 +71,17 @@ Answer these questions to find your recommended installation method:
 
 ### Decision Matrix
 
-| Environment               | Team | Updates    | Recommended Method                              |
-|---------------------------|------|------------|-------------------------------------------------|
-| **Any** (simplest)        | Any  | Auto       | [VS Code Extension](methods/extension.md) ⭐     |
-| Local (no container)      | Solo | Manual     | [Peer Directory Clone](methods/peer-clone.md)   |
-| Local (no container)      | Team | Controlled | [Submodule](methods/submodule.md)               |
-| Local devcontainer        | Solo | Auto       | [Git-Ignored Folder](methods/git-ignored.md)    |
-| Local devcontainer        | Team | Controlled | [Submodule](methods/submodule.md)               |
-| Codespaces only           | Solo | Auto       | [GitHub Codespaces](methods/codespaces.md)        |
-| Codespaces only           | Team | Controlled | [Submodule](methods/submodule.md)                 |
-| Both local + Codespaces   | Any  | Any        | [Multi-Root Workspace](methods/multi-root.md)     |
-| Advanced (shared install) | Solo | Auto       | [Mounted Directory](methods/mounted.md)           |
+| Environment               | Team | Updates    | Recommended Method                            |
+|---------------------------|------|------------|-----------------------------------------------|
+| **Any** (simplest)        | Any  | Auto       | [VS Code Extension](methods/extension.md) ⭐   |
+| Local (no container)      | Solo | Manual     | [Peer Directory Clone](methods/peer-clone.md) |
+| Local (no container)      | Team | Controlled | [Submodule](methods/submodule.md)             |
+| Local devcontainer        | Solo | Auto       | [Git-Ignored Folder](methods/git-ignored.md)  |
+| Local devcontainer        | Team | Controlled | [Submodule](methods/submodule.md)             |
+| Codespaces only           | Solo | Auto       | [GitHub Codespaces](methods/codespaces.md)    |
+| Codespaces only           | Team | Controlled | [Submodule](methods/submodule.md)             |
+| Both local + Codespaces   | Any  | Any        | [Multi-Root Workspace](methods/multi-root.md) |
+| Advanced (shared install) | Solo | Auto       | [Mounted Directory](methods/mounted.md)       |
 
 ⭐ **VS Code Extension** is the recommended method for most users who don't need customization.
 
@@ -109,18 +109,18 @@ Answer these questions to find your recommended installation method:
 
 ### Simplest Method (Recommended for Most Users)
 
-| Method                                        | Best For                           | Complexity |
-|-----------------------------------------------|------------------------------------|------------|
-| [VS Code Extension](methods/extension.md) ⭐   | Anyone wanting zero-config setup   | Minimal    |
+| Method                                      | Best For                         | Complexity |
+|---------------------------------------------|----------------------------------|------------|
+| [VS Code Extension](methods/extension.md) ⭐ | Anyone wanting zero-config setup | Minimal    |
 
 ### Consumer Methods (Customization + Version Control)
 
 These methods are for projects that want to use and potentially customize HVE-Core's components:
 
-| Method                                            | Best For                      | Complexity |
-|---------------------------------------------------|-------------------------------|------------|
-| [Multi-Root Workspace](methods/multi-root.md)     | Any environment, portable     | Low        |
-| [Submodule](methods/submodule.md)                 | Teams needing version control | Medium     |
+| Method                                        | Best For                      | Complexity |
+|-----------------------------------------------|-------------------------------|------------|
+| [Multi-Root Workspace](methods/multi-root.md) | Any environment, portable     | Low        |
+| [Submodule](methods/submodule.md)             | Teams needing version control | Medium     |
 
 ### Developer Methods
 
@@ -165,7 +165,7 @@ Run the installer in validation mode:
 
 ## Post-Installation: Update Your .gitignore
 
-HVE-Core chatmodes create ephemeral workflow artifacts in a `.copilot-tracking/` folder within your project. These files include research documents, implementation plans, PR review tracking, and other machine-generated content that should typically not be committed to version control.
+HVE-Core agents create ephemeral workflow artifacts in a `.copilot-tracking/` folder within your project. These files include research documents, implementation plans, PR review tracking, and other machine-generated content that should typically not be committed to version control.
 
 **Add this line to your project's `.gitignore`:**
 
@@ -182,9 +182,9 @@ HVE-Core chatmodes create ephemeral workflow artifacts in a `.copilot-tracking/`
 * Implementation plans from `task-planner`
 * PR review artifacts from `pr-review`
 * Work item planning files for ADO workflows
-* Temporary prompt files used by chatmodes
+* Temporary prompt files used by agents
 
-These artifacts are useful during your workflow session but are ephemeral by design. They help chatmodes/custom agents maintain context across sessions without polluting your repository history.
+These artifacts are useful during your workflow session but are ephemeral by design. They help agents maintain context across sessions without polluting your repository history.
 
 ## Next Steps
 

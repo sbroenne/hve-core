@@ -27,7 +27,7 @@ VS Code Extension installation provides HVE-Core directly through the VS Code Ma
 
 ❌ **Consider alternatives when:**
 
-* You need to customize chat modes, prompts, or instructions → [Peer Clone](peer-clone.md) or [Git-Ignored](git-ignored.md)
+* You need to customize custom agents, prompts, or instructions → [Peer Clone](peer-clone.md) or [Git-Ignored](git-ignored.md)
 * Your team needs to version control HVE-Core → [Submodule](submodule.md)
 * You're contributing to HVE-Core development → [Peer Clone](peer-clone.md)
 * You need to test pre-release versions → [Multi-Root Workspace](multi-root.md)
@@ -39,7 +39,7 @@ The extension packages all HVE-Core components (chat agents, prompts, instructio
 ```text
 VS Code Extension System
 ├── Extension installed via marketplace
-│   ├── .github/chatmodes/      # All chat agents
+│   ├── .github/agents/         # All chat agents
 │   ├── .github/prompts/        # All prompt templates
 │   ├── .github/instructions/   # All coding guidelines
 │   └── scripts/dev-tools/      # PR reference generation
@@ -84,25 +84,25 @@ After installation, verify everything works:
 
 ## Post-Installation: Update Your .gitignore
 
-HVE-Core chatmodes create ephemeral workflow artifacts in a `.copilot-tracking/` folder within your project. Add this line to your project's `.gitignore`:
+HVE-Core agents create ephemeral workflow artifacts in a `.copilot-tracking/` folder within your project. Add this line to your project's `.gitignore`:
 
 ```text
 .copilot-tracking/
 ```
 
 > [!NOTE]
-> This applies even when using the extension. The folder is created in your project directory when you use chatmodes like `task-researcher` or `pr-review`. See the [installation guide](../install.md#post-installation-update-your-gitignore) for details on what gets stored there.
+> This applies even when using the extension. The folder is created in your project directory when you use agents like `task-researcher` or `pr-review`. See the [installation guide](../install.md#post-installation-update-your-gitignore) for details on what gets stored there.
 
 ## What's Included
 
 The extension provides all HVE-Core components:
 
-| Component    | Examples                                      |
-|--------------|-----------------------------------------------|
-| Chat Agents  | task-planner, pr-review, adr-creation         |
-| Prompts      | git-commit, pull-request, ado-create-pr       |
-| Instructions | markdown, python-script, commit-message       |
-| Dev Tools    | Generate-PrReference.ps1, pr-ref-gen.sh       |
+| Component    | Examples                                |
+|--------------|-----------------------------------------|
+| Chat Agents  | task-planner, pr-review, adr-creation   |
+| Prompts      | git-commit, pull-request, ado-create-pr |
+| Instructions | markdown, python-script, commit-message |
+| Dev Tools    | Generate-PrReference.ps1, pr-ref-gen.sh |
 
 ## Updating
 
@@ -126,7 +126,7 @@ The extension updates automatically through VS Code's extension system:
 
 ### Cons ❌
 
-* **No customization** - Can't modify chat modes, prompts, or instructions
+* **No customization** - Can't modify custom agents, prompts, or instructions
 * **Extension updates only** - Can't easily test development versions
 * **No version pinning** - Uses latest version (or opt into pre-release)
 * **No team control** - Can't enforce specific versions across team
@@ -250,19 +250,19 @@ If you need customization:
 
 1. **Uninstall extension** - Extensions view → Uninstall "HVE Core"
 2. **Follow manual method** - See [Peer Clone](peer-clone.md) for local customization
-3. **Customize** - Edit chat modes, prompts, or instructions as needed
+3. **Customize** - Edit custom agents, prompts, or instructions as needed
 
 ## Limitations
 
-| Aspect           | Status                                                      |
-|------------------|-------------------------------------------------------------|
-| Customization    | ❌ Cannot modify components                                 |
-| Version control  | ⚠️ Extension updates only, no git control                   |
-| Team enforcement | ⚠️ Each member installs independently                       |
-| Dev/testing      | ⚠️ Pre-release channel only, not custom branches            |
-| Portable paths   | ✅ Works everywhere                                         |
-| Setup complexity | ✅ Simplest possible                                        |
-| Disk usage       | ✅ Single installation across all projects                  |
+| Aspect           | Status                                           |
+|------------------|--------------------------------------------------|
+| Customization    | ❌ Cannot modify components                       |
+| Version control  | ⚠️ Extension updates only, no git control        |
+| Team enforcement | ⚠️ Each member installs independently            |
+| Dev/testing      | ⚠️ Pre-release channel only, not custom branches |
+| Portable paths   | ✅ Works everywhere                               |
+| Setup complexity | ✅ Simplest possible                              |
+| Disk usage       | ✅ Single installation across all projects        |
 
 ## Next Steps
 
